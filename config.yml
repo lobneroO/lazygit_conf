@@ -2,6 +2,7 @@ customCommands:
   - key: 'F'
     command: 'git fetch --prune --all'
     context: 'localBranches, remotes, remoteBranches'
+    description: 'Prune remotes'
     output: log
   - key: 'G'
     command: "glab mr view -w {{.SelectedLocalBranch.UpstreamBranch}}"
@@ -12,4 +13,4 @@ customCommands:
     command: 'git submodule update --init --recursive'
     context: 'files'
     description: 'Update submodules'
-    stream: true
+    output: log
