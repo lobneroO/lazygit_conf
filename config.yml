@@ -1,0 +1,15 @@
+customCommands:
+  - key: 'F'
+    command: 'git fetch --prune --all'
+    context: 'localBranches, remotes, remoteBranches'
+    output: log
+  - key: 'G'
+    command: "glab mr view -w {{.SelectedLocalBranch.UpstreamBranch}}"
+    context: "localBranches"
+    description: "Go to MR in GitLab"
+    output: log
+  - key: 'U'
+    command: 'git submodule update --init --recursive'
+    context: 'files'
+    description: 'Update submodules'
+    stream: true
