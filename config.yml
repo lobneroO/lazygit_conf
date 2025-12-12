@@ -14,3 +14,9 @@ customCommands:
     context: 'files'
     description: 'Update submodules'
     output: log
+  - key: 'X'
+    description: "Cherry-Pick but do not apply commit. Reset afterwards to unsage cherry-picked commit."
+    command: python -c 'import os; import git; repo = git.Repo(os.getcwd()); repo.git.cherry_pick("{{ .SelectedSubCommit.Sha }}", n=True); repo.git.reset()'
+    context: 'subCommits'
+    output: log
+
